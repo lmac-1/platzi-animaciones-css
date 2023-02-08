@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+
+    .phone {
+      position: relative;
+      overflow: hidden;
+      border: 8px solid black;
+      border-radius: 50px;
+      height: 600px;
+      width: 300px;
+      background: #ccefff;
+      box-shadow: 0 19px 38px rgb(0, 0, 0, 0.3), 0 15px 12px rgb(0, 0, 0, 0.22);
+    }
+
+    .layer {
+      position: absolute;
+    }
+
+    .layer-1 {
+      z-index: 1;
+      height: 450px;
+      width: 80px;
+      background: white;
+      bottom: 0;
+      right: 60px;
+      border-radius: 15px;
+    }
+
+    .layer-2 {
+      z-index: 2;
+      height: 450px;
+      width: 80px;
+      background: white;
+      bottom: 0;
+      left: 60px;
+      border-radius: 15px;
+    }
+
+    .layer-3 {
+      z-index: 3;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 220px;
+      height: 400px;
+      background: pink;
+      bottom: 0;
+      border-radius: 15px;
+    }
+
+    .layer-4 {
+      z-index: 4;
+      height: 350px;
+      width: 80px;
+      background: white;
+      bottom: 0;
+      left: 20px;
+      border-radius: 15px;
+    }
+
+    .layer-5 {
+      z-index: 5;
+      width: 200px;
+      height: 300px;
+      background: palevioletred;
+      bottom: 0;
+      border-radius: 20px;
+    }
+
+    .layer-6 {
+      z-index: 6;
+      height: 250px;
+      width: 80px;
+      background: white;
+      bottom: 0;
+      right: 30px;
+      border-radius: 15px;
+    }
+
+    .layer-7 {
+      z-index: 7;
+      width: 150px;
+      height: 200px;
+      background: plum;
+      bottom: 0;
+      right: 0;
+      border-radius: 20px;
+    }
+
+    .layer-8 {
+      z-index: 8;
+      width: 200px;
+      height: 120px;
+      background: thistle;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    .layer-9 {
+      z-index: 9;
+      width: 120px;
+      height: 100px;
+      background: pink;
+      bottom: 0;
+    }
+
+    .layer-10 {
+      z-index: 10;
+      width: 120px;
+      height: 100px;
+      background: palevioletred;
+      bottom: 0;
+      right: 0;
+    }
+
+    left-ear--outer {
+      background: white;
+      border-radius: 90%;
+      width: 20px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="phone">
+    <div class="layer layer-1"></div>
+    <div class="layer layer-2"></div>
+    <div class="layer layer-3"></div>
+    <div class="layer layer-4"></div>
+    <div class="layer layer-5"></div>
+    <div class="layer layer-6"></div>
+    <div class="layer layer-7"></div>
+    <div class="layer layer-8"></div>
+    <div class="layer layer-9"></div>
+    <div class="layer layer-10"></div>
+  </div>
+</body>
+
+</html>
