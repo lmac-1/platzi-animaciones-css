@@ -1,0 +1,120 @@
+<!-- Examples taken from MDN Web docs for linear gradient
+https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .square {
+      height: 100px;
+      width: 100px;
+    }
+
+    /* A gradient tilted 45 degrees starting blue and finishing red */
+    .blue-red {
+      background: linear-gradient(45deg, blue, red)
+    }
+
+    /* A gradient going from the bottom right to the top left corner starting blue and finishing orange */
+    .blue-orange {
+      background: linear-gradient(to left top, blue, orange)
+    }
+
+    /* Color stop: A gradient going from the bottom to top, starting blue, turning green at 40% of its length, 
+        and finishing red. */
+    .color-stop {
+      background: linear-gradient(0deg, blue, green 40%, red)
+    }
+
+    /* Color hint: A gradient going from the left to right 
+        starting red, getting to the midpoint color
+        10% of the way across the length of the gradient,
+        taking the rest of the 90% of the length to change to blue */
+    .color-hint {
+      background: linear-gradient(.25turn, red, 10%, blue)
+    }
+
+    /* Multi-position color stop: A gradient tilted 45 degrees,
+        with a red bottom-left half and a blue top-right half,
+        with a hard line where the gradient changes from red to blue  */
+    .multiposition {
+      background: linear-gradient(45deg, red 0 50%, blue 50% 100%)
+    }
+
+    .rainbow {
+      background: linear-gradient(red, orange, yellow, green, blue)
+        /* this is equivalent to the above:
+        background: linear-gradient(red 0%, orange 25%, yellow 50%, green 75%, blue 100%);
+      */
+    }
+
+    .other {
+      /* Here it says 10% solid red, and solid blue from 90% to end, the rest is a transition
+        The mid point between the two colours is at 30%
+      */
+      background: linear-gradient(red 10%, 30%, blue 90%);
+    }
+
+    .stripe {
+      width: 500px;
+      height: 100px;
+      background: linear-gradient(to right,
+          red 20%,
+          orange 20% 40%,
+          yellow 40% 60%,
+          green 60% 80%,
+          blue 80%);
+      margin: 5px;
+    }
+
+    .zigzag-multicolour {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(-135deg, hotpink 25%, transparent 25%) -50px 0,
+        linear-gradient(135deg, teal 25%, transparent 25%) -50px 0,
+        linear-gradient(45deg, plum 25%, transparent 25%),
+        linear-gradient(-45deg, aqua 25%, transparent 25%);
+      background-size: 100px 100px;
+    }
+
+    .zigzag {
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(-135deg, hotpink 25%, transparent 25%) -50px 0,
+        linear-gradient(135deg, hotpink 25%, transparent 25%) -50px 0,
+        linear-gradient(45deg, hotpink 25%, transparent 25%),
+        linear-gradient(-45deg, hotpink 25%, transparent 25%);
+      background-size: 100px 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="square blue-red"></div>
+    <div class="square blue-orange"></div>
+    <div class="square color-stop"></div>
+    <div class="square color-hint"></div>
+    <div class="square multiposition"></div>
+    <div class="square rainbow"></div>
+    <div class="square other"></div>
+  </div>
+  <div class="stripe"></div>
+  <div class="container">
+    <div class="zigzag-multicolour"></div>
+    <div class="zigzag"></div>
+  </div>
+</body>
+
+</html>

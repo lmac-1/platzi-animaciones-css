@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+    }
+
+    .phone {
+      position: relative;
+      overflow: hidden;
+      border: 8px solid black;
+      border-radius: 50px;
+      height: 600px;
+      width: 300px;
+      background: #ccefff;
+      box-shadow: 0 19px 38px rgb(0, 0, 0, 0.3), 0 15px 12px rgb(0, 0, 0, 0.22);
+    }
+
+    .layer {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .layer-1 {
+      z-index: 1;
+      height: 450px;
+      width: 80px;
+      bottom: 0;
+      right: 60px;
+      border-radius: 15px;
+    }
+
+    .layer-2 {
+      z-index: 2;
+      height: 450px;
+      width: 80px;
+      bottom: 0;
+      left: 60px;
+      border-radius: 15px;
+    }
+
+    .layer-3 {
+      z-index: 3;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 220px;
+      height: 400px;
+      background: hotpink;
+      bottom: 0;
+      border-radius: 15px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .layer-4 {
+      z-index: 4;
+      height: 350px;
+      width: 80px;
+      bottom: 0;
+      left: 20px;
+      border-radius: 15px;
+    }
+
+    .layer-5 {
+      z-index: 5;
+      width: 200px;
+      height: 300px;
+      background: hotpink;
+      bottom: 0;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .layer-6 {
+      z-index: 6;
+      height: 250px;
+      width: 80px;
+      bottom: 0;
+      right: 30px;
+      border-radius: 15px;
+    }
+
+    .layer-7 {
+      z-index: 7;
+      width: 150px;
+      height: 200px;
+      background: hotpink;
+      bottom: 0;
+      right: 0;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .layer-8 {
+      z-index: 8;
+      width: 200px;
+      height: 120px;
+      /* background: thistle; */
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    .layer-9 {
+      z-index: 9;
+      width: 120px;
+      height: 100px;
+      bottom: 0;
+    }
+
+    .layer-10 {
+      z-index: 10;
+      width: 120px;
+      height: 100px;
+      bottom: 0;
+      right: 0;
+    }
+
+    .left-ear--outer {
+      background: white;
+      border-radius: 90%;
+      width: 20px;
+      height: 50px;
+      position: absolute;
+      left: 10px;
+    }
+
+    .left-ear--inner {
+      background: linear-gradient(pink, hotpink);
+      border-radius: 90%;
+      width: 10px;
+      height: 50px;
+      position: absolute;
+      left: 15px;
+      top: 8px;
+    }
+
+    .right-ear--outer {
+      background: white;
+      border-radius: 90%;
+      width: 20px;
+      height: 50px;
+      position: absolute;
+      right: 10px;
+    }
+
+    .right-ear--inner {
+      background: linear-gradient(pink, hotpink);
+      border-radius: 90%;
+      width: 10px;
+      height: 50px;
+      position: absolute;
+      right: 15px;
+      top: 8px;
+    }
+
+    .head {
+      background: white;
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 30px;
+    }
+
+    .head__eye {
+      background: gray;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+
+      /* Gives a name to the animation that we are creating */
+      animation-name: blink;
+      /* How long the animation cycle lasts */
+      animation-duration: 2s;
+      /* How long the animation repeats (in this case, forever) */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        height: 5px;
+      }
+
+      5% {
+        /* we add this so that the blink happens in the middle of the eye */
+        transform: translate(0px, 2px);
+        height: 1px;
+      }
+
+      10% {
+        /* then we return back to the original position */
+        transform: translate(0px, 0px);
+        height: 5px;
+      }
+    }
+
+    .head__eye--left {
+      left: 20px;
+    }
+
+    .head__eye--right {
+      right: 20px;
+    }
+
+    .border {
+      width: 100%;
+      height: 40px;
+      background: pink;
+    }
+
+    .zigzag {
+      width: 100%;
+      height: 30px;
+      background: linear-gradient(135deg, pink 25%, transparent 25%) -50px 0,
+        linear-gradient(-135deg, pink 25%, transparent 25%) -50px 0,
+        linear-gradient(45deg, hotpink 25%, transparent 25%),
+        linear-gradient(-45deg, hotpink 25%, rgb(0, 0, 0, 0.5) 25%);
+      background-size: 33px 30px;
+      position: absolute;
+      top: 10px;
+    }
+
+    .layer-8__left-cloud {
+      height: 70%;
+      width: 50px;
+      background: pink;
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .layer-8__middle-cloud {
+      height: 100%;
+      width: 90px;
+      background: pink;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .layer-8__right-cloud {
+      height: 70%;
+      width: 50px;
+      background: pink;
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .layer-9__left-cloud {
+      height: 100%;
+      width: 80px;
+      background-color: white;
+      position: absolute;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .layer-9__right-cloud {
+      height: 60px;
+      width: 40px;
+      border-radius: 0 40px 30px 0;
+      background: white;
+      position: absolute;
+      left: 80px;
+      bottom: 0;
+    }
+
+
+
+    .layer-10__left-cloud {
+      height: 60px;
+      width: 40px;
+      border-radius: 40px 0 0 30px;
+      background: white;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .layer-10__right-cloud {
+      height: 100%;
+      width: 80px;
+      background-color: white;
+      position: absolute;
+      border-radius: 40px 40px 0 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="phone">
+    <!-- bunny 1 -->
+    <div class="layer layer-1">
+      <div class="left-ear--outer"></div>
+      <div class="left-ear--inner"></div>
+      <div class="right-ear--outer"></div>
+      <div class="right-ear--inner"></div>
+      <div class="head">
+        <div class="head__eye head__eye--left"></div>
+        <div class="head__eye head__eye--right"></div>
+      </div>
+    </div>
+    <!-- bunny 2 -->
+    <div class="layer layer-2">
+      <div class="left-ear--outer"></div>
+      <div class="left-ear--inner"></div>
+      <div class="right-ear--outer"></div>
+      <div class="right-ear--inner"></div>
+      <div class="head">
+        <div class="head__eye head__eye--left"></div>
+        <div class="head__eye head__eye--right"></div>
+      </div>
+    </div>
+    <!-- wall 1 -->
+    <div class="layer layer-3">
+      <div class="border"></div>
+      <div class="zigzag"></div>
+    </div>
+    <!-- bunny 3 -->
+    <div class="layer layer-4">
+      <div class="left-ear--outer"></div>
+      <div class="left-ear--inner"></div>
+      <div class="right-ear--outer"></div>
+      <div class="right-ear--inner"></div>
+      <div class="head">
+        <div class="head__eye head__eye--left"></div>
+        <div class="head__eye head__eye--right"></div>
+      </div>
+    </div>
+    <!-- wall 2 -->
+    <div class="layer layer-5">
+      <div class="border"></div>
+      <div class="zigzag"></div>
+    </div>
+    <!-- bunny 4 -->
+    <div class="layer layer-6">
+      <div class="left-ear--outer"></div>
+      <div class="left-ear--inner"></div>
+      <div class="right-ear--outer"></div>
+      <div class="right-ear--inner"></div>
+      <div class="head">
+        <div class="head__eye head__eye--left"></div>
+        <div class="head__eye head__eye--right"></div>
+      </div>
+    </div>
+    <!-- wall 3 -->
+    <div class="layer layer-7">
+      <div class="border"></div>
+      <div class="zigzag"></div>
+    </div>
+    <!-- middle cloud -->
+    <div class="layer layer-8">
+      <div class="layer-8__left-cloud"></div>
+      <div class="layer-8__middle-cloud"></div>
+      <div class="layer-8__right-cloud"></div>
+    </div>
+    <!-- left cloud -->
+    <div class="layer layer-9">
+      <div class="layer-9__left-cloud"></div>
+      <div class="layer-9__right-cloud"></div>
+    </div>
+    <!-- right cloud -->
+    <div class="layer layer-10">
+      <div class="layer-10__left-cloud"></div>
+      <div class="layer-10__right-cloud"></div>
+    </div>
+  </div>
+</body>
+
+</html>
